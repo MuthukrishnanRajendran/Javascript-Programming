@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO</title>
+    <style>
+        body
+        {
+            background-color: aquamarine;
+        }
+        .button
+        {
+            background-color: burlywood;
+        }
+        #button
+        {
+            background-color:hotpink;
+        }
+    </style>
+</head>
+<body>
+    <input id="input">
+    <button id="button" onclick="add()">Add</button>
+    <ul id="list-container">
+        <li>Hello<button class="button" onclick="deleteitem(event)">Delete</button></li>
+    </ul>
+</body>
+<script>
+    var input=document.getElementById("input")
+    var list=document.getElementById("list-container")
+    function add()
+    {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value+ "<button id='button' onclick='deleteitem(event)'>Delete</button>"
+        list.append(listitem)
+    }
+    function deleteitem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
+</html>
